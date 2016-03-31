@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="momo.seoul.dulleapp"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="23" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="momo.seoul.dulleapp.MainActivity"
+            android:label="@string/actionbar_main" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity 
+            android:name="momo.seoul.dulleapp.MyAccountActivity"
+            android:label="@string/actionbar_account"></activity>
+        <activity 
+            android:name="momo.seoul.dulleapp.StampPageActivity"
+            android:label="@string/app_name"></activity>
+        <activity 
+            android:name="momo.seoul.dulleapp.DistancePageActivity"
+            android:label="@string/app_name"></activity>
+        <activity 
+            android:name="momo.seoul.dulleapp.TimePageActivity"
+            android:label="@string/app_name"></activity>
+        <activity 
+            android:name="momo.seoul.dulleapp.SharingPageActivity"
+            android:label="@string/app_name"></activity>
+    </application>
+
+</manifest>

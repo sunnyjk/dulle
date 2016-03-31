@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DulleApp</string>
+    <string name="actionbar_main">오늘의 둘레둘레 패턴</string>
+    <string name="actionbar_account">내 계정 정보</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Actions -->
+    <string name="action_flip_front">Front</string>
+    <string name="action_flip_back">Back</string>
+</resources>
