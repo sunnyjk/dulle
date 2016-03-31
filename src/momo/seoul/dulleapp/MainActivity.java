@@ -6,8 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.NavUtils;
+import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class MainActivity extends Activity implements
 		OnBackStackChangedListener {
@@ -17,6 +19,15 @@ public class MainActivity extends Activity implements
 	private static final int MODE_SHARE = 2;
 
 	private Handler mHandler = new Handler();
+	
+	/**
+	 * Related with ViewPager
+	 */
+
+	Button btn[] = new Button[2];
+	ViewPager viewPager = null;
+	Thread thread = null;
+	Handler handler = null;
 
 	private boolean mShowingFront = false;
 
@@ -33,6 +44,21 @@ public class MainActivity extends Activity implements
 		}
 
 		getFragmentManager().addOnBackStackChangedListener(this);
+		
+//		// viewPager
+//				viewPager = (ViewPager) findViewById(R.id.viewPager);
+//				MyViewPagerAdapter adapter = new MyViewPagerAdapter(
+//						getSupportFragmentManager());
+//
+//				viewPager.setAdapter(adapter);
+//				viewPager.setOffscreenPageLimit(2);
+//			
+//				btn[0] = (Button) findViewById(R.id.btn_a);
+//				btn[1] = (Button) findViewById(R.id.btn_b);
+//
+//				for (int i = 0; i < btn.length; i++) {
+//					btn[i].setOnClickListener(this);
+//				}
 	}
 
 	@Override
