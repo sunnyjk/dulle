@@ -1,8 +1,8 @@
 package momo.seoul.dulleapp;
 
-import momo.seoul.dulleapp.view.DistancePageActivity;
-import momo.seoul.dulleapp.view.StampPageActivity;
-import momo.seoul.dulleapp.view.TimePageActivity;
+import momo.seoul.dulleapp.view.DistanceActivity;
+import momo.seoul.dulleapp.view.StampActivity;
+import momo.seoul.dulleapp.view.TimeActivity;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;

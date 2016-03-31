@@ -4,11 +4,11 @@ import momo.seoul.dulleapp.R;
 import android.app.Activity;
 import android.os.Bundle;
 
-public class SharingPageActivity extends Activity {
+public class DistanceActivity extends Activity{
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_sharing_page);
+		setContentView(R.layout.activity_distance_page);
 	}
 }
