@@ -11,6 +11,10 @@ import android.view.MenuItem;
 
 public class MainActivity extends Activity implements
 		OnBackStackChangedListener {
+	
+	private static final int MODE_TODAY = 0;
+	private static final int MODE_TOTAL = 1;
+	private static final int MODE_SHARE = 2;
 
 	private Handler mHandler = new Handler();
 
