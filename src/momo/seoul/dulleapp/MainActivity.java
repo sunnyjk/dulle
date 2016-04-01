@@ -1,126 +1,124 @@
 package momo.seoul.dulleapp;
 
-import android.app.Activity;
-import android.app.FragmentManager.OnBackStackChangedListener;
+import momo.seoul.dulleapp.controller.NfcController;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class MainActivity extends Activity implements
-		OnBackStackChangedListener {
-	
+public class MainActivity extends ActionBarActivity implements OnClickListener {
+
 	private static final int MODE_TODAY = 0;
 	private static final int MODE_TOTAL = 1;
 	private static final int MODE_SHARE = 2;
 
 	private Handler mHandler = new Handler();
-	
+
 	/**
 	 * Related with ViewPager
 	 */
 
-	Button btn[] = new Button[2];
+	Button btn[] = new Button[3];
 	ViewPager viewPager = null;
 	Thread thread = null;
 	Handler handler = null;
 
 	private boolean mShowingFront = false;
+	
+	NfcController nfcController;
+	
+	public MainActivity() {
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		if (savedInstanceState == null) {
-			getFragmentManager().beginTransaction()
-					.add(R.id.container, new MainFrontFragment()).commit();
-		} else {
-			mShowingFront = (getFragmentManager().getBackStackEntryCount() > 0);
+
+		/* viewPager */
+		viewPager = (ViewPager) findViewById(R.id.viewPager);
+		MyViewPagerAdapter adapter = new MyViewPagerAdapter(
+				getSupportFragmentManager());
+
+		viewPager.setAdapter(adapter);
+		viewPager.setOffscreenPageLimit(2);
+
+		btn[0] = (Button) findViewById(R.id.btnToday);
+		btn[1] = (Button) findViewById(R.id.btnTotal);
+		btn[2] = (Button) findViewById(R.id.btnShare);
+
+		for (int i = 0; i < btn.length; i++) {
+			btn[i].setOnClickListener(this);
+		}
+		
+		/* NFC Controller */
+	
+		// 에뮬레이터는 NFC 사용 불가
+/*		nfcController = new NfcController(this);
+		
+		if(!nfcController.checkNfcAdapter()){
+			finish();
+		}
+		
+		nfcController.getNfcData(getIntent());*/
+	
+	}
+	
+	@Override
+	protected void onNewIntent(Intent intent) {
+		super.onNewIntent(intent);
+		
+		if(intent.getStringExtra("stamp_result")!=null){
+			// setContentView(MODE_STAMPBOOK);
+			// Stamp 관련 Activity로 보내주기
 		}
 
-		getFragmentManager().addOnBackStackChangedListener(this);
+//		setIntent(intent);
+//		nfcController.getNfcData(intent);
 		
-//		// viewPager
-//				viewPager = (ViewPager) findViewById(R.id.viewPager);
-//				MyViewPagerAdapter adapter = new MyViewPagerAdapter(
-//						getSupportFragmentManager());
-//
-//				viewPager.setAdapter(adapter);
-//				viewPager.setOffscreenPageLimit(2);
-//			
-//				btn[0] = (Button) findViewById(R.id.btn_a);
-//				btn[1] = (Button) findViewById(R.id.btn_b);
-//
-//				for (int i = 0; i < btn.length; i++) {
-//					btn[i].setOnClickListener(this);
-//				}
 	}
 
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-
-		MenuItem item = menu.add(Menu.NONE, R.id.action_flip, Menu.NONE,
-				mShowingFront ? R.string.action_flip_front
-						: R.string.action_flip_back);
-		item.setIcon(mShowingFront ? R.drawable.alert
-				: R.drawable.search103);
-		item.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
-
+		
 		return true;
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
-			NavUtils.navigateUpTo(this, new Intent(this, MainActivity.class));
-			return true;
-
-		case R.id.action_flip:
-			flipCard();
-			return true;
-		}
 
 		return super.onOptionsItemSelected(item);
 	}
 
-	private void flipCard() {
-		if (mShowingFront) {
-			getFragmentManager().popBackStack();
-			return;
-		}
-		// Flip to the front.
-		mShowingFront = true;
+	
 
-		getFragmentManager()
-				.beginTransaction()
-				.setCustomAnimations(R.animator.card_flip_right_in,
-						R.animator.card_flip_right_out,
-						R.animator.card_flip_left_in,
-						R.animator.card_flip_left_out)
-				.replace(R.id.container, new MainBackFragment())
-				.addToBackStack(null).commit();
-		
-		mHandler.post(new Runnable() {
-			
-			@Override
-			public void run() {
-				invalidateOptionsMenu();
-				
-			}
-		});
-
-	}
 
 	@Override
-	public void onBackStackChanged() {
-		mShowingFront = (getFragmentManager().getBackStackEntryCount() > 0);
-		invalidateOptionsMenu();
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.btnToday:
+			viewPager.setCurrentItem(MODE_TODAY);
+			break;
+		case R.id.btnTotal:
+			viewPager.setCurrentItem(MODE_TOTAL);
+			break;
+		case R.id.btnShare:
+			viewPager.setCurrentItem(MODE_SHARE);
+			break;
 
+		default:
+			break;
+		}
+		
 	}
+
+
 }

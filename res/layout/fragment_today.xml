@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        
+        <ImageView 
+            android:id="@+id/imgToday"
+            android:layout_width="match_parent"
+            android:layout_height="350px"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/sampleimg"/>
+        
+        <TextView 
+            android:id="@+id/tvUserId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="StarryJang"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10px"/>
+        
+       <TextView 
+           android:id="@+id/tvStamp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignTop="@id/imgToday"
+           android:layout_marginTop="80px"
+           android:layout_marginLeft="200px"
+           android:text="Stamp"/>
+       
+       <TextView 
+           android:id="@+id/tvTime"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignTop="@id/imgToday"
+           android:layout_marginTop="80px"
+           android:layout_toRightOf="@id/tvStamp"
+           android:text="Time"/>
+       
+       <TextView 
+           android:id="@+id/tvDistance"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignTop="@id/imgToday"
+           android:layout_marginTop="80px"
+           android:layout_toRightOf="@id/tvTime"
+           android:text="Distance"/>
+        
+        <Button 
+            android:id="@+id/btnOnOff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/imgToday"
+            android:layout_marginBottom="30px"
+            android:layout_marginLeft="200px"
+            android:text="On/Off"/>
+        
+        <Button 
+            android:id="@+id/btnMyAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MyAccountBtn"
+            android:layout_below="@id/btnOnOff"/>
+        
+    </RelativeLayout>
+    
+
+</LinearLayout>

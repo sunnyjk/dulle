@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        
+        <ImageView 
+            android:id="@+id/imgToday2"
+            android:layout_width="match_parent"
+            android:layout_height="300px"
+            android:layout_alignParentTop="true"/>
+        
+        <Button 
+            android:id="@+id/btnGoToStamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgToday2"
+            android:text="StampBtn"/>
+        
+        <Button 
+            android:id="@+id/btnGoToTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnGoToStamp"
+            android:text="TimeBtn"/>
+        
+        <Button 
+            android:id="@+id/btnGoToDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnGoToTime"
+            android:text="DistanceBtn"/>
+        
+        <Button 
+            android:id="@+id/btnGoToShare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnGoToDistance"
+            android:text="ShareBtn"/>
+        
+        
+    </RelativeLayout>
+    
+
+</LinearLayout>

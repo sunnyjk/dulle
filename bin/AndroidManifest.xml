@@ -12,7 +12,8 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/Theme.AppCompat" >
+        
         <activity
             android:name="momo.seoul.dulleapp.MainActivity"
             android:label="@string/actionbar_main" >
@@ -24,19 +25,19 @@
         </activity>
         
         <activity 
-            android:name="momo.seoul.dulleapp.MyAccountActivity"
+            android:name="momo.seoul.dulleapp.view.MyAccountActivity"
             android:label="@string/actionbar_account"></activity>
         <activity 
-            android:name="momo.seoul.dulleapp.StampPageActivity"
+            android:name="momo.seoul.dulleapp.view.StampActivity"
             android:label="@string/app_name"></activity>
         <activity 
-            android:name="momo.seoul.dulleapp.DistancePageActivity"
+            android:name="momo.seoul.dulleapp.view.DistanceActivity"
             android:label="@string/app_name"></activity>
         <activity 
-            android:name="momo.seoul.dulleapp.TimePageActivity"
+            android:name="momo.seoul.dulleapp.view.TimeActivity"
             android:label="@string/app_name"></activity>
         <activity 
-            android:name="momo.seoul.dulleapp.SharingPageActivity"
+            android:name="momo.seoul.dulleapp.view.SharingActivity"
             android:label="@string/app_name"></activity>
     </application>
 
