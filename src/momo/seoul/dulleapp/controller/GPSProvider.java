@@ -30,13 +30,13 @@ public class GPSProvider {
 			
 			@Override
 			public void onLocationChanged(Location loc) {
-				// »ç¿ëÀÚÀÇ À§Ä¡°¡ º¯ÇÒ ¶§¸¶´Ù ÀÌ¸¦ °¨ÁöÇØ³»´Â ¸Ş¼Òµå
+				// ì‚¬ìš©ìì˜ ìœ„ì¹˜ê°€ ë³€í•  ë•Œë§ˆë‹¤ ì´ë¥¼ ê°ì§€í•´ë‚´ëŠ” ë©”ì†Œë“œ
 				loc.getLatitude();
 				loc.getLongitude();
 			}
 		};
 		
-		// À§Ä¡¸¦ °¡Á®¿Ã ¶§ÀÇ ¿É¼Ç
+		// ìœ„ì¹˜ ì •ë³´ë¥¼ ê°€ì ¸ì˜¬ ë•Œ ê³ ë ¤ë˜ëŠ” ì˜µì…˜
 		criteria = new Criteria();	
 		criteria.setAccuracy(Criteria.ACCURACY_COARSE);
 		criteria.setPowerRequirement(Criteria.POWER_LOW);
@@ -45,9 +45,9 @@ public class GPSProvider {
 		criteria.setSpeedRequired(false);
 		criteria.setCostAllowed(true);
 		
-		// ÁÖ¾îÁø ¿É¼Ç Á¶°Ç¿¡ ¸Â´Â °¡Àå ÀûÇÕÇÑ À§Ä¡ Á¤º¸ Á¦°øÀÚ ¼³Á¤
+		// ì£¼ì–´ì§„ ì˜µì…˜ ì¡°ê±´ì— ê°€ì¥ ì í•©í•œ ìœ„ì¹˜ì •ë³´ ì œê³µì ì„¤ì •
 		bestProvider = mLocManager.getBestProvider(criteria, true);
-		// ¸¶Áö¸·À¸·Î °¨ÁöµÈ »ç¿ëÀÚÀÇ À§Ä¡ °Ë»ö ¸Ş¼Òµå
+		// ë§ˆì§€ë§‰ìœ¼ë¡œ ê°ì§€ëœ ì‚¬ìš©ìì˜ ìœ„ì¹˜ ì°¾ì•„ë‚´ëŠ” ë©”ì†Œë“œ
 		location = mLocManager.getLastKnownLocation(bestProvider);
 				
 	}

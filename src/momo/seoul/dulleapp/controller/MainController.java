@@ -10,9 +10,9 @@ import momo.seoul.dulleapp.view.StampActivity;
 import momo.seoul.dulleapp.view.TimeActivity;
 
 
-/*	MainController´Â 
- * 	CustomizeÇÑ DulleListener interface¸¦ implements ¹Ş¾Æ¼­
- * 	Activity(Controller)¿Í View¸¦ ¿¬°á½ÃÄÑÁÖ´Â ¿ªÇÒ	*/
+/*	MainControllerì—ì„œ  
+ * 	Customizeí•˜ê¸° ìœ„í•´ DulleListener interfaceë¥¼ implements í•œë‹¤.
+ * 	Activity(Controller)ë¥¼ Viewì™€ ì—°ê²°í•´ì¤€ë‹¤. */
 public class MainController implements DulleListener{
 
 	public static final String packageName = "momo.seoul.dulleapp";

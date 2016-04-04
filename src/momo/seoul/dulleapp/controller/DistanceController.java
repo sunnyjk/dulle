@@ -50,7 +50,7 @@ public class DistanceController {
 		
 		Location.distanceBetween(loc_first[0], loc_first[1], loc_last[0], loc_last[1], distance);
 		
-		// distance ÀúÀå
+		// distance ì €ìž¥
 	}
 
 }

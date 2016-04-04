@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 		
 		/* NFC Controller */
 	
-		// ¿¡¹Ä·¹ÀÌÅÍ´Â NFC »ç¿ë ºÒ°¡
 /*		nfcController = new NfcController(this);
 		
 		if(!nfcController.checkNfcAdapter()){
@@ -77,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 		
 		if(intent.getStringExtra("stamp_result")!=null){
 			// setContentView(MODE_STAMPBOOK);
-			// Stamp °ü·Ã Activity·Î º¸³»ÁÖ±â
+			// Stamp ï¿½ï¿½ï¿½ï¿½ Activityï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½
 		}
 
 //		setIntent(intent);

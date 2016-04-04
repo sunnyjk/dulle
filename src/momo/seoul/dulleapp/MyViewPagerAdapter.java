@@ -10,9 +10,9 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 public class MyViewPagerAdapter extends FragmentStatePagerAdapter {
 
 	/*
-	 * ÀÌ Å¬·¡½ºÀÇ ºÎ¸ğ»ı¼ºÀÚ È£Ãâ½Ã ÀÎ¼ö·Î ¹İµå½Ã FragmentManager°´Ã¼¸¦ ³Ñ°Ü¾ßÇÑ´Ù.
-	 * ÀÌ °´Ã¼´Â Activity¿¡¼­¸¸ ¸¸µé¼ö ÀÖ°í, ¿©±â¼­»ç¿ëÁßÀÎ Fragment°¡ v4ÀÌ±â ¶§¹®¿¡
-	 * ActivityÁß¿¡¼­µµ ActionBarActivity¿¡¼­ ¾ò¾î¿Í¾ßÇÑ´Ù.
+	 * ì´ í´ë˜ìŠ¤ì˜ ë¶€ëª¨ìƒì„±ì í˜¸ì¶œì‹œ ì¸ìˆ˜ë¡œ ë°˜ë“œì‹œ FragmentManagerê°ì²´ë¥¼ ë„˜ê²¨ì•¼í•œë‹¤.
+	 * ì´ ê°ì²´ëŠ” Activityì—ì„œë§Œ ë§Œë“¤ìˆ˜ ìˆê³ , ì—¬ê¸°ì„œì‚¬ìš©ì¤‘ì¸ Fragmentê°€ v4ì´ê¸° ë•Œë¬¸ì—
+	 * Activityì¤‘ì—ì„œë„ ActionBarActivityì—ì„œ ì–»ì–´ì™€ì•¼í•œë‹¤.
 	 */
 	
 	Fragment[] fragments = new Fragment[3];

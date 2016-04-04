@@ -18,7 +18,7 @@ public class StampController {
 	
 	public int showStamp(){
 		
-		// DB¿¡¼­ ½ºÅÆÇÁ °¹¼ö °¡Á®¿Í¼­ ¸®ÅÏ. 
+		// DBì—ì„œ ìŠ¤íƒ¬í”„ ê°¯ìˆ˜ ê°€ì ¸ì™€ì„œ ë¦¬í„´. 
 		
 		return 0;
 	}

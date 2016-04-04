@@ -68,7 +68,7 @@ public class TodayFragment extends Fragment implements OnClickListener{
 		user = new User();
 		user.setUserId(tvUserId.getText().toString());
 		
-		/* ½Ç½Ã°£ ±â·Ï ¹İ¿µ */
+		/* ê±°ë¦¬ í‘œì‹œ */
 		String dis = distanceController.showDistance() + "km";
 		tvDistance.setText(dis);
 		
@@ -82,7 +82,7 @@ public class TodayFragment extends Fragment implements OnClickListener{
 		switch (v.getId()) {
 		case R.id.btnOnOff:
 			if(!checkSwitch){
-				// gps ±â´É ²¨Á®ÀÖÀ» °æ¿ì
+				// gps ê¸°ëŠ¥ì´ êº¼ì ¸ ìˆì„ ê²½ìš°
 				distanceController.gpsOn();
 				
 				timeController = new TimeController(mCtx);
@@ -90,7 +90,7 @@ public class TodayFragment extends Fragment implements OnClickListener{
 				
 				checkSwitch = true;
 			}else{
-				// gps ±â´É ÄÑÁ®ÀÖÀ» °æ¿ì
+				// gps ê¸°ëŠ¥ì´ ì¼œì ¸ ìˆì„ ê²½ìš°
 				distanceController.gpsOff();
 				checkSwitch = false;
 			}

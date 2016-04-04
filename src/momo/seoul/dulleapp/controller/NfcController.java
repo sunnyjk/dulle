@@ -28,12 +28,12 @@ public class NfcController {
 	private int stamp_id;
 
 	
-	/** NFC °ü·Ã */
+	/** NFC ê´€ë ¨ */
 	
 	public boolean checkNfcAdapter(){
 		mAdapter = NfcAdapter.getDefaultAdapter(mCtx);
 		if (mAdapter == null) {
-			System.out.println("Áö¿øÇÏÁö ¾Ê´Â ±â±âÀÔ´Ï´Ù.");
+			System.out.println("ì§€ì›í•˜ì§€ ì•ŠëŠ” ê¸°ê¸°ì…ë‹ˆë‹¤.");
 			return false;
 		}	
 		return true;		
@@ -42,8 +42,8 @@ public class NfcController {
 	public void nfcAlarmToTurnOn(){
 		if(!mAdapter.isEnabled()){
 			AlertDialog.Builder ad = new AlertDialog.Builder(mCtx);
-			ad.setTitle("NFC ¾Ë¸²");
-			ad.setMessage("½ºÅÆÇÁºÏ ÀÌ¿ë¿¡ ÇÊ¿äÇÑ NFC ±â´ÉÀ» »ç¿ëÇÏ½Ã°Ú½À´Ï±î?");
+			ad.setTitle("NFC ì•Œë¦¼");
+			ad.setMessage("ìŠ¤íƒ¬í”„ë¶ ì´ìš©ì— í•„ìš”í•œ NFC ê¸°ëŠ¥ì„ ì‚¬ìš©í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
 			ad.setPositiveButton("OK", new DialogInterface.OnClickListener() {
 				
 				@Override
@@ -114,7 +114,7 @@ public class NfcController {
 				
 				new StampController(mCtx).saveStamp(stamp_id);
 				
-				// È­¸é ÀÌµ¿ÀÌ ÇÊ¿äÇÏ´Ù¸é Ãß°¡ÇØÁÖ±â!
+				// í™”ë©´ ì´ë™ì´ í•„ìš”í•˜ë‹¤ë©´ ì¶”ê°€í•´ì£¼ê¸°!
 			}
 
 		}
