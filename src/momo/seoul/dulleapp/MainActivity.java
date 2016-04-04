@@ -2,15 +2,22 @@ package momo.seoul.dulleapp;
 
 import momo.seoul.dulleapp.controller.NfcController;
 import android.content.Intent;
+import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.RelativeLayout;
+import android.widget.RelativeLayout.LayoutParams;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
 
@@ -41,6 +48,26 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
+		/* Action Bar */
+		ActionBar actionBar = getSupportActionBar();
+		if(actionBar != null){
+			actionBar.setBackgroundDrawable(new ColorDrawable(191919));
+			//actionBar.setTitle(title);
+		}
+		
+		TextView actionTitle = new TextView(getApplicationContext());
+		
+		LayoutParams lp = new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+		
+		actionTitle.setLayoutParams(lp);
+		actionTitle.setText("둘레길 시작하기");
+		actionTitle.setGravity(Gravity.CENTER);
+		actionTitle.setTypeface(Typeface.createFromAsset(getAssets(), "NanumBarunGothic.otf"));
+		actionTitle.setTextSize(15);
+		
+		actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+		actionBar.setCustomView(actionTitle);
+	
 
 		/* viewPager */
 		viewPager = (ViewPager) findViewById(R.id.viewPager);
