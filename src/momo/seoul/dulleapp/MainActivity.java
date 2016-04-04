@@ -5,14 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class MainActivity extends ActionBarActivity implements OnClickListener {
+public class MainActivity extends AppCompatActivity implements OnClickListener {
 
 	private static final int MODE_TODAY = 0;
 	private static final int MODE_TOTAL = 1;
@@ -40,7 +40,7 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
+		
 
 		/* viewPager */
 		viewPager = (ViewPager) findViewById(R.id.viewPager);

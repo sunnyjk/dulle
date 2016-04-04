@@ -1,12 +1,12 @@
 package momo.seoul.dulleapp.view;
 
-import momo.seoul.dulleapp.MainActivity;
 import momo.seoul.dulleapp.R;
+import momo.seoul.dulleapp.controller.DistanceController;
 import momo.seoul.dulleapp.controller.MainController;
+import momo.seoul.dulleapp.controller.TimeController;
 import momo.seoul.dulleapp.model.User;
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -28,6 +28,10 @@ public class TodayFragment extends Fragment implements OnClickListener{
 	Context mCtx;
 	User user;
 	
+	Boolean checkSwitch = false;
+	DistanceController distanceController;
+	TimeController timeController;
+	
 	public TodayFragment(){
 		
 	}
@@ -46,6 +50,7 @@ public class TodayFragment extends Fragment implements OnClickListener{
 			Bundle savedInstanceState) {
 		
 		mController = new MainController(mCtx); 
+		distanceController = new DistanceController(mCtx);
 		
 		view = inflater.inflate(R.layout.fragment_today, container, false);
 		
@@ -63,6 +68,10 @@ public class TodayFragment extends Fragment implements OnClickListener{
 		user = new User();
 		user.setUserId(tvUserId.getText().toString());
 		
+		/* 실시간 기록 반영 */
+		String dis = distanceController.showDistance() + "km";
+		tvDistance.setText(dis);
+		
 		
 		return view;
 	}
@@ -72,7 +81,19 @@ public class TodayFragment extends Fragment implements OnClickListener{
 
 		switch (v.getId()) {
 		case R.id.btnOnOff:
-			
+			if(!checkSwitch){
+				// gps 기능 꺼져있을 경우
+				distanceController.gpsOn();
+				
+				timeController = new TimeController(mCtx);
+				timeController.recordTime();
+				
+				checkSwitch = true;
+			}else{
+				// gps 기능 켜져있을 경우
+				distanceController.gpsOff();
+				checkSwitch = false;
+			}
 			break;
 
 		case R.id.btnMyAccount:

@@ -24,7 +24,7 @@
                 android:id="@+id/btnToday"
                 style="@style/Widget.AppCompat.ActionButton"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_weight="1"
                 android:text="Today" />
 
@@ -32,7 +32,7 @@
                 android:id="@+id/btnTotal"
                 style="@style/Widget.AppCompat.ActionButton"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_weight="1"
                 android:text="Total" />
             
@@ -40,7 +40,7 @@
                 android:id="@+id/btnShare"
                 style="@style/Widget.AppCompat.ActionButton"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_weight="1"
                 android:text="Share" />
         </LinearLayout>

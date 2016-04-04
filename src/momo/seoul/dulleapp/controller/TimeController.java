@@ -10,8 +10,8 @@ public class TimeController {
 		this.mCtx = ctx;
 	}
 	
-	public void showTime(){
-		
+	public int showTime(){
+		return 0;
 	}
 	
 	public void recordTime(){
